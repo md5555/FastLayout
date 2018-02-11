@@ -2,7 +2,6 @@ package io.fabianterhorst.fastlayout.gradle
 
 import com.android.build.gradle.AppPlugin
 import com.android.build.gradle.LibraryPlugin
-import com.neenbedankt.gradle.androidapt.AndroidAptPlugin
 import org.gradle.api.GradleException
 //import io.fabianterhorst.fastlayout.transformer.FastLayoutTransformer
 import org.gradle.api.Plugin
@@ -25,10 +24,6 @@ class FastLayout implements Plugin<Project> {
 
         def isKotlinProject = project.plugins.find {
             it.getClass().name == 'org.jetbrains.kotlin.gradle.plugin.KotlinAndroidPluginWrapper'
-        }
-
-        if (!isKotlinProject) {
-            project.plugins.apply(AndroidAptPlugin)
         }
 
         //project.android.registerTransform(new FastLayoutTransformer(project))
