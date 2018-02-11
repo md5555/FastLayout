@@ -486,7 +486,7 @@ public class LayoutProcessor extends AbstractProcessor {
         if (rFile.isFile()) {
             return rFile;
         } else {
-            return findFolder("/r/dev/debug/" + packageName.replace(".", "/") + "/R.java");
+            return findFolder("build/generated/source/r/debug/" + packageName.replace(".", "/") + "/R.java");
         }
     }
 
