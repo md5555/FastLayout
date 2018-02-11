@@ -30,13 +30,7 @@ class FastLayout implements Plugin<Project> {
         project.repositories.add(project.getRepositories().jcenter())
         project.dependencies.add("implementation", "io.fabianterhorst:fastlayout:${Version.VERSION}")
         project.dependencies.add("implementation", "io.fabianterhorst:fastlayout-annotations:${Version.VERSION}")
-        if (isKotlinProject) {
-            //project.dependencies.add("kapt", "io.fabianterhorst:fastlayout-annotations:${Version.VERSION}")
-            project.dependencies.add("kapt", "io.fabianterhorst:fastlayout-processor:${Version.VERSION}")
-        } else {
-            //project.dependencies.add("apt", "io.fabianterhorst:fastlayout-annotations:${Version.VERSION}")
-            project.dependencies.add("annotationProcessor", "io.fabianterhorst:fastlayout-processor:${Version.VERSION}")
-        }
+        project.dependencies.add("kapt", "io.fabianterhorst:fastlayout-processor:${Version.VERSION}")
     }
 
     private static boolean isTransformAvailable() {

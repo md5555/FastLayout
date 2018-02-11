@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-kapt'
 //apply plugin: 'fastlayout'
 
 android {
@@ -38,7 +39,7 @@ dependencies {
 
     implementation project(':fastlayout')
     implementation project(':fastlayout-annotations')
-    annotationProcessor project(':fastlayout-processor')
+    kapt project(':fastlayout-processor')
     implementation project(':fastlayout-converters')
 
     //annotationProcessor project(':fastlayout-processor')
